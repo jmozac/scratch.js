@@ -16,6 +16,9 @@ history		:
   		Usage:
   		number2dotted(oo("element")) // without .value
   	From latest CafeDOM v2.1
-	v2	: element(property); newElement(el_type,obj); append(el_parent,el_child,position); oo(@elementsName);
-	v2.1	: fix[X-Requested-With]:METHOD
+	v2 : 
+	--- element(property); newElement(el_type,obj); 
+	--- append(el_parent,el_child,position); oo(@elementsName);
+	v2.1 : 
+	--- fix[X-Requested-With]:METHOD
 </pre>
