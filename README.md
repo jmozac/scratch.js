@@ -3,7 +3,7 @@
 scratch.js is an upgrade version from latest CafeDOM v0.2
 <pre>
 Author 		: jMozac a.k.a K4pT3N  
-URL			: Cafelinux.Info  
+URL		: Cafelinux.Info  
 Contact		: [/|@] jmozac  
 required 	: static.css  
 history		:  
