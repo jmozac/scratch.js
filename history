@@ -1,0 +1,15 @@
+0.2 rev 1
+popup_button() add extended object
+Example Usage
+
+var msg = `hello`;
+		var objButton={
+			cancel	:function(){popup_close()},
+			view	:function(){goto(`./?cont=task&init=${o.project_init}`)},
+			edit	:function(){goto(`./?cont=project&init=${o.project_init}&act=edit`)},
+		};
+		var objExtend = {
+			btn_view	:newElement('input',{type:'button',class:'cover-button',val:'View Task',id:'popup-btn-view'}),
+			btn_edit	:newElement('input',{type:'button',class:'cover-button',val:'Edit',id:'popup-btn-edit'})
+		};
+		popup_alert(msg,objButton,objExtend);
