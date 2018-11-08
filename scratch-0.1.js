@@ -18,6 +18,58 @@
 // 		v2		: element(property); newElement(el_type,obj); append(el_parent,el_child,position); oo(@elementsName);
 //		v2.1	: fix[X-Requested-With]:METHOD
 */
+
+/* POPUP */
+
+function popup_alert(msg,rButton_Callback){
+	// BUTTON
+	if(!rButton_Callback){
+		rButton_Callback={
+			ok:function(){popup_close()}
+		}
+	}
+	var b;
+	var boxalert=newElement('div',{
+			html:
+				'<div class=cover id=popup-cover>'+
+					'<div class=cover-box id=cover-box>'+
+						'<div class=cover-content id=cover-content>'+
+							'<div class=cover-content-box id=cover-content-box>'+
+								'<div class=cover-content-box-message id=alert-message>'+
+									msg+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				'</div>'
+	});
+	append(oo("%body")[0],boxalert);
+	popup_button(rButton_Callback);
+}
+function popup_button(rButton_Callback){
+	var btn_class='btn-cover';
+	var btn_type='input';
+	var alert_div_button=newElement('div',{class:'cover-content-box-nav',id:'alert-button'});
+	
+	var objButton={
+		btn_ok		:newElement(btn_type,{type:'button',class:'cover-button',val:'OK',id:'popup-btn-ok'}),
+		btn_yes		:newElement(btn_type,{type:'button',class:'cover-button',val:'Yes',id:'popup-btn-yes'}),
+		btn_cancel	:newElement(btn_type,{type:'button',class:'cover-button',val:'Cancel',id:'popup-btn-cancel'})
+	};
+	for (var key in rButton_Callback) {
+		if (rButton_Callback.hasOwnProperty(key)) {
+			append(alert_div_button,objButton['btn_'+key]);
+			objButton['btn_'+key].onclick=rButton_Callback[key];
+		}
+	}
+	append(oo("cover-content-box"),alert_div_button);
+}
+function popup_close(){
+	oo("popup-cover").remove();
+}
+
+ls = localStorage;
+
 function oo(el) {
 	var n = el.substring(0, 1),
 	t = el.substring(1, el.length);
