@@ -1,5 +1,5 @@
 /*
-// ScratchJS	
+// ScratchJS v0.2
 // Is an upgrade version from latest CafeDOM v0.2
 // Author 		: jMozac a.k.a K4pT3N
 // URL			: Cafelinux.Info
