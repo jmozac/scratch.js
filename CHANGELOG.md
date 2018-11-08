@@ -8,7 +8,7 @@ Sample usage:
 	var msg='hello';				
 	var objButton={
 		cancel	:function(){popup_close()},
-		ok		:function(){savetask(parent_id,rowIdx)}
+		ok	:function(){savetask(parent_id,rowIdx)}
 	};
 	popup_alert(msg,objButton);
 ```
