@@ -1,5 +1,5 @@
 /*
-// ScratchJS v0.2
+// ScratchJS	
 // Is an upgrade version from latest CafeDOM v0.2
 // Author 		: jMozac a.k.a K4pT3N
 // URL			: Cafelinux.Info
@@ -15,8 +15,9 @@
  * 				Usage:
  * 					number2dotted(oo("element")) // without .value
  * 						
-// 		v2		: element(property); newElement(el_type,obj); append(el_parent,el_child,position); oo(@elementsName);
+// 	v2		: element(property); newElement(el_type,obj); append(el_parent,el_child,position); oo(@elementsName);
 //		v2.1	: fix[X-Requested-With]:METHOD
+* 		Start from v0.2 all history moved to CHANGELOG.md
 */
 
 /* POPUP */
@@ -46,7 +47,7 @@ function popup_alert(msg,rButton_Callback){
 	append(oo("%body")[0],boxalert);
 	popup_button(rButton_Callback);
 }
-function popup_button(rButton_Callback){
+function popup_button(rButton_Callback,objButtonExtended){
 	var btn_class='btn-cover';
 	var btn_type='input';
 	var alert_div_button=newElement('div',{class:'cover-content-box-nav',id:'alert-button'});
@@ -56,6 +57,9 @@ function popup_button(rButton_Callback){
 		btn_yes		:newElement(btn_type,{type:'button',class:'cover-button',val:'Yes',id:'popup-btn-yes'}),
 		btn_cancel	:newElement(btn_type,{type:'button',class:'cover-button',val:'Cancel',id:'popup-btn-cancel'})
 	};
+	if(typeof objButtonExtended === 'object'){
+		objButton = Object.assign(objButtonExtended,objButton);
+	}
 	for (var key in rButton_Callback) {
 		if (rButton_Callback.hasOwnProperty(key)) {
 			append(alert_div_button,objButton['btn_'+key]);
